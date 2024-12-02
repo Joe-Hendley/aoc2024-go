@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/Joe-Hendley/aoc2024/internal/aoc/dangerconv"
-	"github.com/Joe-Hendley/aoc2024/internal/aoc/ints"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/integer"
 	"github.com/Joe-Hendley/aoc2024/internal/aoc/logger"
 )
 
@@ -43,7 +43,7 @@ func (s *Solver) Part1(input string) int {
 
 	total := 0
 	for i := range lhs {
-		total += ints.Distance(lhs[i], rhs[i])
+		total += integer.Distance(lhs[i], rhs[i])
 	}
 
 	return total

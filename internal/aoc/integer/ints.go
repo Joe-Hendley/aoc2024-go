@@ -1,4 +1,4 @@
-package ints
+package integer
 
 func Sum(ints ...int) int {
 	s := 0
