@@ -1,4 +1,4 @@
-package part1
+package p1
 
 import (
 	"testing"

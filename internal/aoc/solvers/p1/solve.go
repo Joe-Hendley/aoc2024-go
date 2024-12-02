@@ -1,4 +1,4 @@
-package part1
+package p1
 
 import (
 	"slices"
@@ -15,8 +15,6 @@ type Solver struct {
 
 func (s *Solver) Init(verbose bool) {
 	s.Logger = logger.New(verbose)
-
-	return
 }
 
 func arrangeInput(input string) ([]int, []int) {

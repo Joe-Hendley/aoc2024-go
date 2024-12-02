@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/Joe-Hendley/aoc2024/internal/aoc/file"
-	"github.com/Joe-Hendley/aoc2024/internal/aoc/solvers/part1"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/solvers/p1"
 )
 
 const header = `
@@ -24,7 +24,7 @@ type solver interface {
 }
 
 var solvers = []solver{
-	&part1.Solver{},
+	&p1.Solver{},
 }
 
 func Solve() int {
