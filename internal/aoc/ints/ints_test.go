@@ -3,7 +3,7 @@ package ints
 import (
 	"testing"
 
-	"github.com/Joe-Hendley/aoc2023/internal/aoc/assert"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/assert"
 )
 
 func TestEuclid(t *testing.T) {

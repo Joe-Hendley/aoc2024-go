@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Joe-Hendley/aoc2023/internal/aoc/file"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/file"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/solvers/part1"
 )
 
 const header = `
@@ -22,7 +23,9 @@ type solver interface {
 	Part2(input string) int
 }
 
-var solvers = []solver{}
+var solvers = []solver{
+	&part1.Solver{},
+}
 
 func Solve() int {
 	fmt.Println(header)

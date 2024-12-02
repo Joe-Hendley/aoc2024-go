@@ -26,6 +26,17 @@ func StringFieldsToInts(s string) []int {
 	return ints
 }
 
+func StringToLinesOfInts(s string) [][]int {
+	lines := strings.Split(s, "\n")
+	intLines := [][]int{}
+
+	for _, line := range lines {
+		intLines = append(intLines, StringFieldsToInts(line))
+	}
+
+	return intLines
+}
+
 func StringSplitToInts(s string, sep string) []int {
 	split := strings.Split(s, sep)
 	ints := make([]int, len(split))

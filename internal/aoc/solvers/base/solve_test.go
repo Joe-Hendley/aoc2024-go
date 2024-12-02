@@ -3,8 +3,8 @@ package base
 import (
 	"testing"
 
-	"github.com/Joe-Hendley/aoc2023/internal/aoc/assert"
-	"github.com/Joe-Hendley/aoc2023/internal/aoc/file"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/assert"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/file"
 )
 
 func TestPartOne(t *testing.T) {

@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/Joe-Hendley/aoc2023/internal/aoc"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc"
 )
 
 func main() {

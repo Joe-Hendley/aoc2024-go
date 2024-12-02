@@ -72,3 +72,11 @@ func euclid(a, b int) int {
 
 	return a
 }
+
+func Distance(a, b int) int {
+	x := a - b
+	if x > 0 {
+		return x
+	}
+	return -x
+}
