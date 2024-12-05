@@ -4,9 +4,9 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/Joe-Hendley/aoc2024/internal/aoc/dangerconv"
 	"github.com/Joe-Hendley/aoc2024/internal/aoc/integer"
 	"github.com/Joe-Hendley/aoc2024/internal/aoc/logger"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/must"
 )
 
 type Solver struct {
@@ -25,8 +25,8 @@ func arrangeInput(input string) ([]int, []int) {
 
 	for _, line := range lines {
 		parts := strings.Fields(line)
-		lhnum := dangerconv.Atoi(parts[0])
-		rhnum := dangerconv.Atoi(parts[1])
+		lhnum := must.Atoi(parts[0])
+		rhnum := must.Atoi(parts[1])
 
 		lhs = append(lhs, lhnum)
 		rhs = append(rhs, rhnum)

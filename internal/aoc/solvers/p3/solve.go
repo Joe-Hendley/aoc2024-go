@@ -4,8 +4,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/Joe-Hendley/aoc2024/internal/aoc/dangerconv"
 	"github.com/Joe-Hendley/aoc2024/internal/aoc/logger"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/must"
 )
 
 var mulRegex = regexp.MustCompile(`mul\(\d{0,3}\,\d{0,3}\)`)
@@ -25,8 +25,8 @@ func (s *Solver) Part1(input string) int {
 	sum := 0
 	for _, mul := range muls {
 		digits := digitRegex.FindAllString(mul, -1)
-		lhs := dangerconv.Atoi(digits[0])
-		rhs := dangerconv.Atoi(digits[1])
+		lhs := must.Atoi(digits[0])
+		rhs := must.Atoi(digits[1])
 		sum += (lhs * rhs)
 	}
 	return sum
@@ -40,8 +40,8 @@ func (s *Solver) Part2(input string) int {
 		switch {
 		case strings.HasPrefix(com, "mul") && doMul:
 			digits := digitRegex.FindAllString(com, -1)
-			lhs := dangerconv.Atoi(digits[0])
-			rhs := dangerconv.Atoi(digits[1])
+			lhs := must.Atoi(digits[0])
+			rhs := must.Atoi(digits[1])
 			sum += (lhs * rhs)
 		case com == "do()":
 			doMul = true

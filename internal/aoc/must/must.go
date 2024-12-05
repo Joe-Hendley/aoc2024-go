@@ -1,4 +1,4 @@
-package dangerconv
+package must
 
 import (
 	"fmt"

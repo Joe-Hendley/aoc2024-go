@@ -3,9 +3,9 @@ package p2
 import (
 	"slices"
 
-	"github.com/Joe-Hendley/aoc2024/internal/aoc/dangerconv"
 	"github.com/Joe-Hendley/aoc2024/internal/aoc/integer"
 	"github.com/Joe-Hendley/aoc2024/internal/aoc/logger"
+	"github.com/Joe-Hendley/aoc2024/internal/aoc/must"
 )
 
 type Solver struct {
@@ -33,7 +33,7 @@ func isSafe(readings []int) bool {
 }
 
 func (s *Solver) Part1(input string) int {
-	reports := dangerconv.StringToLinesOfInts(input)
+	reports := must.StringToLinesOfInts(input)
 	safeReports := 0
 
 	for _, report := range reports {
@@ -46,7 +46,7 @@ func (s *Solver) Part1(input string) int {
 }
 
 func (s *Solver) Part2(input string) int {
-	reports := dangerconv.StringToLinesOfInts(input)
+	reports := must.StringToLinesOfInts(input)
 	safeReports := 0
 
 	for _, report := range reports {
