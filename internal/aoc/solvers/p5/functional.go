@@ -18,7 +18,7 @@ func solvePart1Functional(input string) int {
 		return isUpdateValid(rules, pages)
 	})
 
-	return fun.Fold(fun.Map(validUpdates, func(update []int) int { return update[len(update)/2] }), func(a, b int) int { return a + b }, 0)
+	return fun.Fold(fun.Map(validUpdates, elementAtMidpoint), sumInts, 0)
 }
 
 func solvePart2Functional(input string) int {
@@ -35,15 +35,14 @@ func solvePart2Functional(input string) int {
 		return sortUpdate(rules, update)
 	})
 
-	return fun.Fold(fun.Map(sortedUpdates, func(update []int) int { return update[len(update)/2] }), func(a, b int) int { return a + b }, 0)
+	return fun.Fold(fun.Map(sortedUpdates, elementAtMidpoint), sumInts, 0)
 }
 
 func parseRules(rules string) map[int][]int {
 	parsed := map[int][]int{}
-	fun.MapInPlace(strings.Split(rules, "\n"), func(rule string) string {
+	fun.Apply(strings.Split(rules, "\n"), func(rule string) {
 		split := strings.Split(rule, "|")
 		parsed[must.Atoi(split[1])] = append(parsed[must.Atoi(split[1])], must.Atoi(split[0]))
-		return rule
 	})
 
 	return parsed
@@ -51,11 +50,9 @@ func parseRules(rules string) map[int][]int {
 
 func isUpdateValid(rules map[int][]int, pages []int) bool {
 	firstIndexes := map[int]int{}
-	for index, page := range pages {
-		if _, ok := firstIndexes[page]; !ok {
-			firstIndexes[page] = index
-		}
-	}
+	fun.Apply(fun.Enumerate(pages), func(page fun.Enumurated[int]) {
+		firstIndexes[page.Value] = page.Index
+	})
 
 	for _, page := range pages {
 		if pageRules, ok := rules[page]; ok {
@@ -86,4 +83,12 @@ func sortUpdate(rules map[int][]int, update []int) []int {
 	})
 
 	return working
+}
+
+func elementAtMidpoint[T any](slice []T) T {
+	return slice[len(slice)/2]
+}
+
+func sumInts(a, b int) int {
+	return a + b
 }
