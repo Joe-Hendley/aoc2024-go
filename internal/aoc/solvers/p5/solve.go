@@ -1,7 +1,6 @@
 package p5
 
 import (
-	"fmt"
 	"slices"
 	"strings"
 
@@ -155,7 +154,6 @@ func (pq printQueue) sumMiddleOfCorrectedUpdates() int {
 
 		if !followsRules {
 			sorted := pq.sortUpdate(update)
-			fmt.Println(sorted)
 			sumCorrectedMiddles += sorted[(len(sorted) / 2)]
 		}
 	}

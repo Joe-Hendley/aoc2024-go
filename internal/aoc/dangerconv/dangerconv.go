@@ -1,6 +1,7 @@
 package dangerconv
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -42,7 +43,12 @@ func StringSplitToInts(s string, sep string) []int {
 	ints := make([]int, len(split))
 
 	for i := range split {
-		ints[i] = Atoi(split[i])
+		var err error
+		ints[i], err = strconv.Atoi(split[i])
+		if err != nil {
+
+			panic(fmt.Sprintf("parsing {%s} delim {%s} err {%v}", s, sep, err))
+		}
 	}
 
 	return ints
