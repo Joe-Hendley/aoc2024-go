@@ -8,7 +8,7 @@ import (
 )
 
 func TestPartOne(t *testing.T) {
-	input := file.DangerReadToString("test.txt")
+	input := file.MustReadToString("test.txt")
 	want := 143
 	solver := Solver{}
 	solver.Init(true)
@@ -19,7 +19,7 @@ func TestPartOne(t *testing.T) {
 }
 
 func TestPartTwo(t *testing.T) {
-	input := file.DangerReadToString("test.txt")
+	input := file.MustReadToString("test.txt")
 	want := 123
 	solver := Solver{}
 	solver.Init(true)

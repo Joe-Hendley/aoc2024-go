@@ -8,7 +8,7 @@ import (
 )
 
 func TestPartOne(t *testing.T) {
-	input := file.DangerReadToString("test.txt")
+	input := file.MustReadToString("test.txt")
 	want := 161
 	solver := Solver{}
 	solver.Init(true)
@@ -18,11 +18,8 @@ func TestPartOne(t *testing.T) {
 	assert.Equal(t, got, want)
 }
 
-const testPartTwo = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
-
 func TestPartTwo(t *testing.T) {
-	//input := file.DangerReadToString("test.txt")
-	input := testPartTwo
+	input := file.MustReadToString("test2.txt")
 	want := 48
 	solver := Solver{}
 	solver.Init(true)

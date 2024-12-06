@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func DangerReadToString(path string) string {
+func MustReadToString(path string) string {
 	s, err := ReadToString(path)
 
 	if err != nil {
